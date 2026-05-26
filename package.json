@@ -35,9 +35,9 @@
       "./skills"
     ],
     "prompts": [
-      "./prompts/codex:review.md",
-      "./prompts/codex:adversarial-review.md",
-      "./prompts/codex:rescue.md"
+      "./prompts/codex-review.md",
+      "./prompts/codex-adversarial-review.md",
+      "./prompts/codex-rescue.md"
     ]
   },
   "files": [
