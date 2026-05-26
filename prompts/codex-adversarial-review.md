@@ -37,10 +37,10 @@ Argument handling:
 - Do not strip `--wait` or `--background` yourself.
 - Do not weaken the adversarial framing or rewrite the user's focus text.
 - The companion script parses `--wait` and `--background`. Background runs are launched by spawning the bash command with the shell-level `&` background operator.
-- `/codex:adversarial-review` uses the same review target selection as `/codex:review`.
+- `/codex-adversarial-review` uses the same review target selection as `/codex-review`.
 - It supports working-tree review, branch review, and `--base <ref>`.
 - It does not support `--scope staged` or `--scope unstaged`.
-- Unlike `/codex:review`, it can still take extra focus text after the flags.
+- Unlike `/codex-review`, it can still take extra focus text after the flags.
 
 Foreground flow:
 - Run:

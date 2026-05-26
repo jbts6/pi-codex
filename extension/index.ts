@@ -202,7 +202,7 @@ export default function (pi: ExtensionAPI): void {
         rawOutput = String(JSON.parse(taskResult.stdout)?.rawOutput ?? "").trim();
       } catch {
         ctx.ui.notify(
-          "[codex:gate] Codex returned invalid JSON. The gate cannot be verified — treat as a failure and run /codex:review --wait manually.",
+          "[codex:gate] Codex returned invalid JSON. The gate cannot be verified — treat as a failure and run /codex-review --wait manually.",
           "error"
         );
         return;
@@ -210,7 +210,7 @@ export default function (pi: ExtensionAPI): void {
 
       if (!rawOutput) {
         ctx.ui.notify(
-          "[codex:gate] Codex returned an empty review. The gate cannot be verified — run /codex:review --wait manually.",
+          "[codex:gate] Codex returned an empty review. The gate cannot be verified — run /codex-review --wait manually.",
           "error"
         );
         return;

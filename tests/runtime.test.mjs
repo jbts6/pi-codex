@@ -850,7 +850,7 @@ test("review rejects focus text because it is native-review only", () => {
 
   assert.equal(result.status > 0, true);
   assert.match(result.stderr, /does not support custom focus text/i);
-  assert.match(result.stderr, /\/codex:adversarial-review focus on auth/i);
+  assert.match(result.stderr, /\/codex-adversarial-review focus on auth/i);
 });
 
 test("review rejects staged-only scope because it is native-review only", () => {

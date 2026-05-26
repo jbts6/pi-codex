@@ -6,9 +6,9 @@ Use [Codex](https://github.com/openai/codex) from inside [pi-coding-agent](https
 
 | Command | What it does |
 |---|---|
-| `/codex:review` | Run a Codex code review against local git state |
-| `/codex:adversarial-review` | Codex review that challenges design choices and assumptions |
-| `/codex:rescue [task]` | Delegate a substantial debugging or implementation task to Codex |
+| `/codex-review` | Run a Codex code review against local git state |
+| `/codex-adversarial-review` | Codex review that challenges design choices and assumptions |
+| `/codex-rescue [task]` | Delegate a substantial debugging or implementation task to Codex |
 | `/codex:status` | List running and recent Codex jobs for the current repo |
 | `/codex:result <id>` | Print the final Codex output for a finished job |
 | `/codex:cancel <id>` | Cancel an active background Codex job |
@@ -46,7 +46,7 @@ The deterministic commands (`status`, `result`, `cancel`, `setup`, `gate`) are r
 ## Differences vs. the Claude Code plugin
 
 - No automatic Stop-hook. The pre-ship Codex review is opt-in via `/codex:gate`.
-- No `codex-rescue` subagent. Pi does not auto-discover package-shipped agents, so the rescue forwarder logic lives directly in the `/codex:rescue` prompt template.
+- No `codex-rescue` subagent. Pi does not auto-discover package-shipped agents, so the rescue forwarder logic lives directly in the `/codex-rescue` prompt template.
 - `AskUserQuestion` (Claude Code tool) is replaced by the `codex_ask` extension tool, which wraps `ctx.ui.select()`.
 - Two upstream concurrency bugs are patched in pi-codex's runtime copy (broker `BROKER_BUSY` no longer falls back to a direct app-server; background workers now have their job record persisted before the worker is spawned). See `CHANGELOG.md` "Runtime patches" for details.
 

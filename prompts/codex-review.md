@@ -34,8 +34,8 @@ Argument handling:
 - Do not strip `--wait` or `--background` yourself.
 - Do not add extra review instructions or rewrite the user's intent.
 - The companion script parses `--wait` and `--background`. Background runs are launched by spawning the bash command with the shell-level `&` background operator.
-- `/codex:review` is native-review only. It does not support staged-only review, unstaged-only review, or extra focus text.
-- If the user needs custom review instructions or more adversarial framing, they should use `/codex:adversarial-review`.
+- `/codex-review` is native-review only. It does not support staged-only review, unstaged-only review, or extra focus text.
+- If the user needs custom review instructions or more adversarial framing, they should use `/codex-adversarial-review`.
 
 Foreground flow:
 - Run:

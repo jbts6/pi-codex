@@ -6,7 +6,7 @@
 - Reuses the upstream Node.js companion runtime (`scripts/codex-companion.mjs` and `scripts/lib/*.mjs`) verbatim.
 - Replaces Claude Code wrapper layer with:
   - Pi extension (`extension/index.ts`) that wires `session_start` / `session_shutdown` lifecycle, registers the `codex_ask` interactive tool, and provides extension-native commands `/codex:status`, `/codex:result`, `/codex:cancel`, `/codex:setup`, `/codex:gate`.
-  - Pi prompt templates for the model-driven flows: `/codex:review`, `/codex:adversarial-review`, `/codex:rescue`.
+  - Pi prompt templates for the model-driven flows: `/codex-review`, `/codex-adversarial-review`, `/codex-rescue`.
   - Three internal skills (`codex-cli-runtime`, `codex-result-handling`, `gpt-5-4-prompting`) tagged `disable-model-invocation: true`.
 - Replaces the Claude Code Stop hook with a manual `/codex:gate` command. The pi-codex gate **never fails open**: it always runs a real Codex task (bypassing the upstream `stopReviewGate` config toggle), errors out cleanly if Codex is not set up, and treats any non-`ALLOW:` / non-`BLOCK:` output as a failure rather than a pass.
 - Sets both `PI_CODEX_ROOT` and the legacy `CLAUDE_PLUGIN_ROOT` to the package install directory so the upstream runtime is reused without forking the wider package.
